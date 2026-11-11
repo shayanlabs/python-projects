@@ -1,6 +1,6 @@
 # 🏏 01 · Match Scorecard
 
-> 🛠️ **Building.** The sample run below is what it's built to print.
+> 🛠️ **Building, the PRIMM way:** spec → AI draft → I explain it → predict → modify → bug hunt → make. The sample run below is what it's built to print.
 
 A cricket scorecard you type ball by ball. It adds up every over, keeps a running total, finds the best over, counts fours and sixes, and tells you whether the target was chased.
 
