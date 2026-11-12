@@ -1,10 +1,10 @@
 # 🐍 Python Projects
 
-**Python builds, learnt the AI-era way: AI drafts, I spec, explain, break and rebuild. One new idea at a time.**
+**Python builds, learnt the AI-era way: AI drafts, I turn its code into my own plan, then rebuild it from that plan. One new idea at a time.**
 
 | # | Project | What it does | Python it uses | Status |
 |---|---|---|---|---|
-| 01 | [🏏 Match Scorecard](01-match-scorecard/) | A cricket scorecard you type ball by ball: totals every over, finds the best over, counts boundaries, and says if the target was chased | variables, `input()`, nested `for` loops, running totals, a running max, f-strings | 🛠️ building (spec) |
+| 01 | [🏏 Match Scorecard](01-match-scorecard/) | A cricket scorecard you type ball by ball: totals every over, says how many runs are still needed, finds the best over and counts boundaries | a function, `input()`, a `while` check with `.isdecimal()`, nested `for` loops with `range(1, n + 1)`, running totals, a running max, `round()`, f-strings | ✅ shipped 13 Nov 2026 |
 
 ## 🔧 How every project is made
 
@@ -12,13 +12,15 @@ AI writes the first draft. I do the understanding:
 
 1. **Spec:** I write exactly what the program must do.
 2. **Draft:** AI writes the first version.
-3. **Explain:** I explain every chunk in my own words.
-4. **Predict, then run:** I say what it will print before running it.
-5. **Modify:** I add features by hand.
-6. **Bug hunt:** I find a planted bug myself. AI never debugs for me.
-7. **Make:** I build a small one from a blank file.
+3. **Plan:** I read the code and write it as a plan in plain English.
+4. **Rebuild:** I close the code and write the program again from my plan, in my own file.
+5. **Same input, same output:** both versions must print the same thing.
 
-**The rule:** if I can't explain a line, it doesn't ship.
+**The rule:** if I can't explain a line, it doesn't ship. AI never debugs for me.
+
+## 🚀 Wild ideas
+
+Side builds in `wild/` (the first one is coming): AI gives me a wild idea, I research how it works and write the brief, AI writes the code, and I question it until I understand every part.
 
 ## ▶️ Run a project
 

@@ -1,7 +1,56 @@
-# 🏏 Match Scorecard — project 01 (🛠️ build 01)
-# Instructions: 3_Resources/worksheets/python/match-scorecard-build-01.md in Obsidian
-# Run: python3 ~/python-projects/01-match-scorecard/match_scorecard.py  (run it after EVERY step)
-# Stuck 2 min? Gemini: "I'm stuck on: [the step]. Give me one hint only, no code."
+# 🏏 Match Scorecard — project 01 (🔁 Rebuild 01): the AI's first draft, written from my spec
+# My rebuild from my own plan is my_try.py. Both print the same on the same input.
+# Run: python3 ~/python-projects/01-match-scorecard/match_scorecard.py
 
-BALLS_PER_OVER = 6  # given: balls in one over
+BALLS_PER_OVER = 6
 
+
+# ── Chunk A: ask until the answer is a whole number in range ──
+def ask_number(question, lowest, highest):
+    answer = input(question)
+    while not answer.isdecimal() or int(answer) < lowest or int(answer) > highest:
+        print(f"⚠️ Type a whole number from {lowest} to {highest}.")
+        answer = input(question)
+    return int(answer)
+
+
+# ── Chunk B: the start of the match ──
+print("🏏 Match Scorecard")
+overs = ask_number("Overs: ", 1, 50)
+target = ask_number("Target: ", 1, 999)
+
+total = 0
+fours = 0
+sixes = 0
+best_over = 1
+best_runs = 0
+
+for over in range(1, overs + 1):
+    # ── Chunk C: one over, ball by ball ──
+    over_runs = 0
+    for ball in range(1, BALLS_PER_OVER + 1):
+        runs = ask_number(f"Over {over}, ball {ball}: ", 0, 6)
+        over_runs += runs
+        if runs == 4:
+            fours += 1
+        elif runs == 6:
+            sixes += 1
+
+    # ── Chunk D: after the over ──
+    total += over_runs
+    if over_runs > best_runs:
+        best_runs = over_runs
+        best_over = over
+    need = target - total
+    if need > 0:
+        print(f"📋 Over {over}: {over_runs} runs · Total {total} · 🎯 Need {need} more")
+    else:
+        print(f"📋 Over {over}: {over_runs} runs · Total {total} · ✅ Target reached")
+
+# ── Chunk E: the card ──
+run_rate = round(total / overs, 2)
+print("━━━━━━━━━━━━━━━━━━")
+print(f"🏏 Total: {total} runs in {overs} overs")
+print(f"📈 Run rate: {run_rate}")
+print(f"⭐ Best over: over {best_over} ({best_runs} runs)")
+print(f"💥 Boundaries: {fours + sixes} (fours {fours}, sixes {sixes})")
