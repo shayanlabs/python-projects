@@ -1,18 +1,18 @@
 # 🏏 01 · Match Scorecard
 
-> ✅ **Shipped 13 Nov 2026, the Rebuild way:** spec → AI draft → my plan from the code → I rebuilt it from my plan → same input, same output.
+> ✅ **Shipped 13 Nov 2026, the Rebuild way:** I wrote the spec, AI wrote a first draft, then I closed it and wrote the program myself, with the same output.
 
 A cricket scorecard you type ball by ball. It adds up every over, keeps a running total, says how many runs are still needed for the target, finds the best over and counts fours and sixes.
 
 ## Files
 
-- `match_scorecard.py`: the AI's first draft, written from my spec.
-- `my_try.py`: my rebuild, written from my own plan with the draft closed. Both print the same thing on the same input.
+- `match_scorecard.py`: **my program**, written by me with the AI's draft closed.
+- `ai_draft.py`: the AI's first draft from my spec, kept to show where it started. Both print the same thing on the same input.
 
 ## Run it
 
 ```bash
-python3 my_try.py
+python3 match_scorecard.py
 ```
 
 ## A real run
@@ -39,7 +39,7 @@ Overs `2`, target `15`, over 1: `0 4 1 1 6 0`, over 2: `1 1 4 7 0 2 0` (the `7` 
 - **`round()`** for the run rate.
 - **`.isdecimal()`:** letters, symbols and silly numbers are asked again, never crash it.
 
-## Bugs I fixed in my rebuild
+## Bugs I fixed on the way
 
 - `answer.isdecimal` without `()` never runs the check.
 - `input()` gives text: it has to go through `int()` before comparing or returning it.
